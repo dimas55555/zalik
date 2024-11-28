@@ -29,7 +29,6 @@ public class DateTimeInput extends Input {
 
         dateTimeButton.setPreferredSize(new Dimension(50, 30));
 
-        // Додавання слухача для кнопки
         dateTimeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -63,11 +62,9 @@ public class DateTimeInput extends Input {
             setLayout(new BorderLayout());
             setLocationRelativeTo(parent);
 
-            // Панель для вибору дати
             JCalendar calendar = new JCalendar();
             calendar.setPreferredSize(new Dimension(200, 200));
 
-            // Панель для вибору часу
             JPanel timePanel = new JPanel(new BorderLayout());
             JLabel timeLabel = new JLabel("Час: 12:00", SwingConstants.CENTER);
 
@@ -84,11 +81,9 @@ public class DateTimeInput extends Input {
             ClockPanel clockPanel = new ClockPanel(timeLabel);
             timePanel.add(clockPanel, BorderLayout.NORTH);
 
-            // Обробка кнопок
             hourButton.addActionListener(e -> clockPanel.setAdjustingHour(true));
             minuteButton.addActionListener(e -> clockPanel.setAdjustingHour(false));
 
-            // Кнопка підтвердження
             JButton okButton = new JButton("OK");
             okButton.addActionListener(e -> {
                 selectedDate = calendar.getDate();

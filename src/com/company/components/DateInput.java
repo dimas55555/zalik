@@ -27,17 +27,13 @@ public class DateInput extends Input {
 
         calendarButton.setPreferredSize(new Dimension(50, 30));
 
-        // Додавання слухача для кнопки
         calendarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Створення компонента календаря
                 JCalendar calendar = new JCalendar();
 
-                // Показати діалог з календарем
                 int result = JOptionPane.showConfirmDialog(frame, calendar, "Виберіть дату", JOptionPane.OK_CANCEL_OPTION);
                 if (result == JOptionPane.OK_OPTION) {
-                    // Отримуємо вибрану дату з календаря
                     Date selectedDate = calendar.getDate();
                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                     textField.setText(dateFormat.format(selectedDate));

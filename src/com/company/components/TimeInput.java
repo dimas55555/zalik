@@ -87,7 +87,7 @@ public class TimeInput extends Input {
 
         class ClockPanel extends JPanel {
             private final int radius = 100;
-            private JTextField textField; // Додаємо textField, щоб оновлювати текст
+            private JTextField textField;
             private JLabel timeLabel;
 
             public ClockPanel(JTextField textField) {
@@ -106,7 +106,6 @@ public class TimeInput extends Input {
                     }
                 });
 
-                // Створення timeLabel для відображення вибраного часу
                 timeLabel = new JLabel(String.format("Час: %02d:%02d", selectedHour, selectedMinute), SwingConstants.CENTER);
                 timeLabel.setFont(new Font("Arial", Font.PLAIN, 18));
                 timeLabel.setPreferredSize(new Dimension(200, 30));
@@ -120,8 +119,7 @@ public class TimeInput extends Input {
                 double dx = clickPoint.x - centerX;
                 double dy = clickPoint.y - centerY;
 
-                // Обчислення кута з корекцією для відповідності руху миші
-                double angle = Math.toDegrees(Math.atan2(dy, dx)); // atan2 дає кут у напрямку миші
+                double angle = Math.toDegrees(Math.atan2(dy, dx));
                 if (angle < 0) {
                     angle += 360;
                 }
@@ -133,7 +131,6 @@ public class TimeInput extends Input {
                     selectedMinute = (int) (angle / 6);
                 }
 
-                // Оновлюємо textField і timeLabel з новим часом
                 textField.setText(String.format("%02d:%02d", selectedHour, selectedMinute));
                 timeLabel.setText(String.format("Час: %02d:%02d", selectedHour, selectedMinute));
                 repaint();
