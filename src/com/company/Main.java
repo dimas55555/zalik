@@ -1,29 +1,18 @@
 package com.company;
 
-
-import com.company.components.DateInput;
-import com.company.components.DateTimeInput;
-import com.company.components.Input;
-import com.company.components.TimeInput;
+import com.company.components.*;
 
 public class Main {
     public static void main(String[] args) {
-        // Приклад використання Input
-        Input input = new Input("Введіть текст:");
-        input.render();
+        // Базовий інпут
+        InputComponent input = new Input("Введіть текст:");
 
-        // Приклад використання DateInput
-        DateInput dateInput = new DateInput("Введіть дату:");
-        dateInput.render();
+        // Декоратори для додавання функціональностей
+        InputComponent dateInput = new DateInput(input);
+        InputComponent timeInput = new TimeInput(dateInput);
+        InputComponent dateTimeInput = new DateTimeInput(timeInput);
 
-        // Приклад використання TimeInput
-        TimeInput timeInput = new TimeInput("Введіть час:");
-        timeInput.render();
-
-        // Приклад використання DateTimeInput
-        DateTimeInput dateTimeInput = new DateTimeInput("Введіть дату та час:");
+        // Виводимо тільки один раз в кінці
         dateTimeInput.render();
     }
 }
-
-

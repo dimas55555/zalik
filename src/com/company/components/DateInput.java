@@ -9,20 +9,24 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DateInput extends Input {
-    public DateInput(String labelText) {
-        super(labelText);
+public class DateInput extends InputDecorator {
+    public DateInput(InputComponent component) {
+        super(component);
     }
 
     @Override
     public void render() {
-        final JFrame frame = new JFrame("DateInput Component");
+        // Рендер базового компонента
+        super.render();
+
+        // Додавання функціональності вибору дати
+        JFrame frame = new JFrame("DateInput Component");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 250);
         frame.setLayout(new BorderLayout());
 
-        JLabel label = new JLabel(" " + getLabelText());
-        final JTextField textField = new JTextField();
+        JLabel label = new JLabel(" Введіть дату:");
+        JTextField textField = new JTextField();
         JButton calendarButton = new JButton("\uD83D\uDCC5");
 
         calendarButton.setPreferredSize(new Dimension(50, 30));
@@ -49,9 +53,5 @@ public class DateInput extends Input {
         frame.add(inputPanel, BorderLayout.CENTER);
 
         frame.setVisible(true);
-    }
-
-    private String getLabelText() {
-        return "Дата:";
     }
 }

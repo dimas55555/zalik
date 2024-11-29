@@ -3,13 +3,14 @@ package com.company.components;
 import javax.swing.*;
 import java.awt.*;
 
-public class Input {
+public class Input implements InputComponent {
     private String labelText;
 
     public Input(String labelText) {
         this.labelText = labelText;
     }
 
+    @Override
     public void render() {
         JFrame frame = new JFrame("Input Component");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,4 +26,3 @@ public class Input {
         frame.setVisible(true);
     }
 }
-

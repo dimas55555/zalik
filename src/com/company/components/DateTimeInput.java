@@ -11,13 +11,15 @@ import java.awt.event.MouseEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DateTimeInput extends Input {
-    public DateTimeInput(String labelText) {
-        super(labelText);
+public class DateTimeInput extends InputDecorator {
+    public DateTimeInput(InputComponent component) {
+        super(component);
     }
 
     @Override
     public void render() {
+        super.render();
+
         final JFrame frame = new JFrame("DateTimeInput Component");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 250);

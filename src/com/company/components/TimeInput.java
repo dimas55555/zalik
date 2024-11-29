@@ -4,13 +4,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class TimeInput extends Input {
-    public TimeInput(String labelText) {
-        super(labelText);
+public class TimeInput extends InputDecorator {
+    public TimeInput(InputComponent component) {
+        super(component);
     }
 
     @Override
     public void render() {
+        // Рендер базового компонента
+        super.render();
+
+        // Додавання функціональності вибору часу
         final JFrame frame = new JFrame("TimeInput Component");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 120);
