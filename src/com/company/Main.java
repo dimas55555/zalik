@@ -12,7 +12,6 @@ public class Main {
         InputComponent timeInput = new TimeInput(dateInput);
         InputComponent dateTimeInput = new DateTimeInput(timeInput);
 
-        // ¬иводимо т≥льки один раз в к≥нц≥
         dateTimeInput.render();
     }
 }

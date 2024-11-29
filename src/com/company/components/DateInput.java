@@ -16,10 +16,8 @@ public class DateInput extends InputDecorator {
 
     @Override
     public void render() {
-        // Рендер базового компонента
         super.render();
 
-        // Додавання функціональності вибору дати
         JFrame frame = new JFrame("DateInput Component");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 250);

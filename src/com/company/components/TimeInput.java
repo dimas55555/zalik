@@ -11,10 +11,8 @@ public class TimeInput extends InputDecorator {
 
     @Override
     public void render() {
-        // Рендер базового компонента
         super.render();
 
-        // Додавання функціональності вибору часу
         final JFrame frame = new JFrame("TimeInput Component");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 120);
